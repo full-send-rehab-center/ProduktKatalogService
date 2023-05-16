@@ -1,42 +1,92 @@
 using Microsoft.AspNetCore.Mvc;
+using DataService.ProduktDataService;
 
 namespace ProduktKatalogService.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/categories")]
 
 public class ProduktKatalogController : ControllerBase
 {
-
-[HttpGet]
-
-//Get api/category/categories
-public IEnumerable<string> Get()
-{
-    return new string[]{"CH","LA", "TA", "CO","RI"};
-}
-
-    /*public async Task<IActionResult> GetCatagories()
+    private DataService _service;
+    
+    public ProduktKatalogController(produktDataService service)
     {
-        using (HttpClient client = new HttpClient())
-        {
-            string apiUrl = "https://example.com/api/catalog/categories";
+        _service = service;
+    }
 
-            HttpResponseMessage response = await client.GetAsync(apiUrl);
+    //GET
+    //Get api/catalog/categories
+    [HttpGet]
+    [Route("categories")]
+    public List<ProduktKatalog> GetCategories()
+    {
+        return _service.GetAsync();
+    }
 
-            if (response.IsSuccessStatusCode)
-            {
-                string responseBody = await response.Content.ReadAsStringAsync();
+    //GET api/catalog/{categoriesId}
+    [HttpGet]
+    [Route("categories/{categoryId}")]
+    public List<ProduktKatalog> GetCategoryById()
+    {
+        return _service.GetAsyncId();
+    }
+    //GET api/catalog/{itemId}
+    [HttpGet]
+    [Route("items/{itemId}")]
+    public List<ProduktKatalog> GetItemById()
+    {
+        return _service.GetItemId();
+    }
 
-                List<Category> categories = JsonConvert.DeserializeObject<List<Category>>(responseBody);
+    // POST
+    // POST /api/catalog/categories
+    [HttpPost]
+    [Route("categoreies")]
+    public void CreateCategory([FromBody] ProduktKatalog newCategory)
+    {
+        _service.PostCategory(newCategory);
+    }
 
-                return Ok(categories);
-            }
-            else
-            {
-                return StatusCode((int)response.StatusCode,"An error occurred while retrieving products.");
-            }
-        }
-    }*/
+    // POST /api/catalog/items
+    [HttpPost]
+    [Route("items")]
+    public void CreateItem([FromBody] ProduktKatalog item)
+    {
+        return _service.PostItem(newItem);
+    }
 
+    // PUT
+    // PUT /api/catalog/categories/{categoryId}
+    [HttpPut]
+    [Route("categoreies/{categoryId}")]
+    public void UpdateCategory([FromBody] ProduktKatalog category)
+    {
+        return _service.PutCategory(updateCategory);
+    }
+
+    // PUT /api/catalog/items/{itemId}
+    [HttpPut]
+    [Route("items/{itemId}")]
+    public void UpdateItem([FromBody] ProduktKatalog item)
+    {
+        return _service.PutItem(updateItem);
+    }
+
+    //Delete
+    //Delete api/catalog/categories/{categoryId}
+    [HttpDelete]
+    [Route("categories/{categoryId}")]
+    public void DeleteCategory([FromBody] ProduktKatalog category)
+    {
+        return _service.DeleteCategory();
+    }
+
+    //DELETE api/catelog/items/{itemId}
+    [HttpDelete]
+    [Route("items/{itemId}")]
+    public void DeleteItem([FromBody] ProduktKatalog item)
+    {
+        return _service.DeleteItem();
+    }
 }
