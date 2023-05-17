@@ -5,3 +5,10 @@ C:\Users\oelle\Desktop\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogServ
 C:\Users\oelle\Desktop\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.csproj.CoreCompileInputs.cache
 C:\Users\oelle\Desktop\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\oelle\Desktop\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\oelle\OneDrive\Skrivebord\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.csproj.AssemblyReference.cache
+C:\Users\oelle\OneDrive\Skrivebord\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oelle\OneDrive\Skrivebord\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.AssemblyInfoInputs.cache
+C:\Users\oelle\OneDrive\Skrivebord\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.AssemblyInfo.cs
+C:\Users\oelle\OneDrive\Skrivebord\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.csproj.CoreCompileInputs.cache
+C:\Users\oelle\OneDrive\Skrivebord\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\oelle\OneDrive\Skrivebord\ProduktKatalogService\obj\Debug\net7.0\ProduktKatalogService.MvcApplicationPartsAssemblyInfo.cache

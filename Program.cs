@@ -1,3 +1,7 @@
+using ProduktKatalogService.Models;
+using ProduktKatalogService.Controllers;
+using ProduktDataService.DataService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

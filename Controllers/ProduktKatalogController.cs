@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using DataService.ProduktDataService;
+using ProduktKatalogService.Models;
+using ProduktDataService.DataService;
 
 namespace ProduktKatalogService.Controllers;
 
@@ -8,85 +9,89 @@ namespace ProduktKatalogService.Controllers;
 
 public class ProduktKatalogController : ControllerBase
 {
-    private DataService _service;
+    private produktDataService _service;
     
     public ProduktKatalogController(produktDataService service)
-    {
-        _service = service;
-    }
+        {
+            _service = service;
+        }
 
     //GET
+
     //Get api/catalog/categories
     [HttpGet]
     [Route("categories")]
     public List<ProduktKatalog> GetCategories()
-    {
-        return _service.GetAsync();
-    }
+        {
+            return _service.GetAsync();
+        }
 
     //GET api/catalog/{categoriesId}
     [HttpGet]
     [Route("categories/{categoryId}")]
-    public List<ProduktKatalog> GetCategoryById()
-    {
-        return _service.GetAsyncId();
-    }
+    public List<ProduktKatalog> GetCategoryById(string categoryId)
+        {
+            return _service.GetAsyncId(categoryId);
+        }
+
     //GET api/catalog/{itemId}
     [HttpGet]
     [Route("items/{itemId}")]
-    public List<ProduktKatalog> GetItemById()
-    {
-        return _service.GetItemId();
-    }
+    public List<ProduktKatalog> GetItemById(string itemId)
+        {
+            return _service.GetItemId(itemId);
+        }
 
     // POST
     // POST /api/catalog/categories
     [HttpPost]
     [Route("categoreies")]
     public void CreateCategory([FromBody] ProduktKatalog newCategory)
-    {
-        _service.PostCategory(newCategory);
-    }
+        {
+            _service.PostCategory(newCategory);
+        }
 
     // POST /api/catalog/items
     [HttpPost]
     [Route("items")]
-    public void CreateItem([FromBody] ProduktKatalog item)
-    {
-        return _service.PostItem(newItem);
-    }
+    public void CreateItem([FromBody] ProduktKatalog newItem)
+        {
+            _service.PostItem(newItem);
+        }
 
     // PUT
+
     // PUT /api/catalog/categories/{categoryId}
     [HttpPut]
     [Route("categoreies/{categoryId}")]
-    public void UpdateCategory([FromBody] ProduktKatalog category)
-    {
-        return _service.PutCategory(updateCategory);
-    }
+    public void UpdateCategory(string categoryId, [FromBody] ProduktKatalog updateCategory)
+        {
+            _service.PutCategory(categoryId, updateCategory);
+        }
 
     // PUT /api/catalog/items/{itemId}
     [HttpPut]
     [Route("items/{itemId}")]
-    public void UpdateItem([FromBody] ProduktKatalog item)
-    {
-        return _service.PutItem(updateItem);
-    }
+    public void UpdateItem(string itemId, [FromBody] ProduktKatalog updateItem)
+        {
+            _service.PutItem(itemId, updateItem);
+        }
 
     //Delete
+
     //Delete api/catalog/categories/{categoryId}
     [HttpDelete]
     [Route("categories/{categoryId}")]
-    public void DeleteCategory([FromBody] ProduktKatalog category)
-    {
-        return _service.DeleteCategory();
-    }
+    public void DeleteCategory(string categoryId)
+        {
+            _service.DeleteCategory(categoryId);
+        }
 
     //DELETE api/catelog/items/{itemId}
     [HttpDelete]
     [Route("items/{itemId}")]
-    public void DeleteItem([FromBody] ProduktKatalog item)
-    {
-        return _service.DeleteItem();
-    }
+    public void DeleteItem(string itemId)
+        {
+            _service.DeleteItem(itemId);
+        }
 }

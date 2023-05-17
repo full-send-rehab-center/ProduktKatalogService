@@ -336,6 +336,19 @@
           }
         }
       },
+      "NLog/5.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SharpCompress/0.30.1": {
         "type": "package",
         "compile": {
@@ -1009,6 +1022,30 @@
         "runtimes/win/native/mongocrypt.dll"
       ]
     },
+    "NLog/5.1.4": {
+      "sha512": "Ki0XThITEd//RrQ21yi1HB/Uid4pzTRE5YLvEpk91d0vDXp3OPtVCvWgrYsqqcpTwiipFSOLSsU1RblaexrFiA==",
+      "type": "package",
+      "path": "nlog/5.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/net46/NLog.dll",
+        "lib/net46/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "nlog.5.1.4.nupkg.sha512",
+        "nlog.nuspec"
+      ]
+    },
     "SharpCompress/0.30.1": {
       "sha512": "XqD4TpfyYGa7QTPzaGlMVbcecKnXy4YmYLDWrU+JIj7IuRNl7DH2END+Ll7ekWIY8o3dAMWLFDE1xdhfIWD1nw==",
       "type": "package",
@@ -1396,6 +1433,7 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.5",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
       "MongoDB.Driver >= 2.19.1",
+      "NLog >= 5.1.4",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -1405,21 +1443,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj",
+      "projectUniqueName": "C:\\Users\\oelle\\OneDrive\\Skrivebord\\ProduktKatalogService\\ProduktKatalogService.csproj",
       "projectName": "ProduktKatalogService",
-      "projectPath": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj",
+      "projectPath": "C:\\Users\\oelle\\OneDrive\\Skrivebord\\ProduktKatalogService\\ProduktKatalogService.csproj",
       "packagesPath": "C:\\Users\\oelle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\obj\\",
+      "outputPath": "C:\\Users\\oelle\\OneDrive\\Skrivebord\\ProduktKatalogService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\oelle\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1450,6 +1486,10 @@
             "target": "Package",
             "version": "[2.19.1, )"
           },
+          "NLog": {
+            "target": "Package",
+            "version": "[5.1.4, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"
@@ -1474,7 +1514,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

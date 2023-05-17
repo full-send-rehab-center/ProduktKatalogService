@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4ddSRgd5KvKMyLHuweJEi5itXJKpLVj/MU+Lwen3233ba8VgNy09eXrBRI16Lj/5+No+mjYeBTpX2FzeAWKoNw==",
+  "dgSpecHash": "n0zni8V7WfL6vJ8Yv8mr9QrG5SYlbLnbV9NofMwy0u6RwONl11UCDziXh84h3Ne1t+6jvc+UoMVwtAQbKEOY3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj",
+  "projectFilePath": "C:\\Users\\oelle\\OneDrive\\Skrivebord\\ProduktKatalogService\\ProduktKatalogService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oelle\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\oelle\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
@@ -24,6 +24,7 @@
     "C:\\Users\\oelle\\.nuget\\packages\\mongodb.driver\\2.19.1\\mongodb.driver.2.19.1.nupkg.sha512",
     "C:\\Users\\oelle\\.nuget\\packages\\mongodb.driver.core\\2.19.1\\mongodb.driver.core.2.19.1.nupkg.sha512",
     "C:\\Users\\oelle\\.nuget\\packages\\mongodb.libmongocrypt\\1.7.0\\mongodb.libmongocrypt.1.7.0.nupkg.sha512",
+    "C:\\Users\\oelle\\.nuget\\packages\\nlog\\5.1.4\\nlog.5.1.4.nupkg.sha512",
     "C:\\Users\\oelle\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\oelle\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\oelle\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
