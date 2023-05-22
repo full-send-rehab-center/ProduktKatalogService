@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using ProduktKatalogService.Models;
 using ProduktDataService.DataService;
 
@@ -16,6 +17,7 @@ public class ProduktKatalogController : ControllerBase
             _service = service;
         }
 
+
     //GET
 
     //Get api/catalog/categories
@@ -29,7 +31,7 @@ public class ProduktKatalogController : ControllerBase
     //GET api/catalog/{categoriesId}
     [HttpGet]
     [Route("categories/{categoryId}")]
-    public List<ProduktKatalog> GetCategoryById(string categoryId)
+    public ProduktKatalog GetCategoryById(string categoryId)
         {
             return _service.GetAsyncId(categoryId);
         }
@@ -37,7 +39,7 @@ public class ProduktKatalogController : ControllerBase
     //GET api/catalog/{itemId}
     [HttpGet]
     [Route("items/{itemId}")]
-    public List<ProduktKatalog> GetItemById(string itemId)
+    public ProduktKatalog GetItemById(string itemId)
         {
             return _service.GetItemId(itemId);
         }

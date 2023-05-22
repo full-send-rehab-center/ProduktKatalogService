@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n0zni8V7WfL6vJ8Yv8mr9QrG5SYlbLnbV9NofMwy0u6RwONl11UCDziXh84h3Ne1t+6jvc+UoMVwtAQbKEOY3Q==",
+  "dgSpecHash": "ncVo5bM311g2+jtH7w4g5CPjWwj1KgZw2rOc69/FaZmcQiYttGfH2Fhmrn+rTlK78xPBOG01kTsJKdoVxi1emQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\oelle\\OneDrive\\Skrivebord\\ProduktKatalogService\\ProduktKatalogService.csproj",
+  "projectFilePath": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oelle\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\oelle\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
