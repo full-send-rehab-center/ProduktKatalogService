@@ -30,20 +30,20 @@ public class ProduktKatalogController : ControllerBase
             return _service.GetAsync();
         }
 
-    //GET api/catalog/{categoriesId}
-    [HttpGet("category/{categoryid}", Name = "GetCaregoryById")]
-    public ProduktKatalog GetCategoryById(string categoryId)
+    //GET catalog/{categoriesId}
+    [HttpGet("category/{CategoryId}", Name = "GetCaregoryById")]
+    public ProduktKatalog GetCategoryById(string CategoryId)
         {
-            return _service.GetAsyncId(categoryId);
+            return _service.GetAsyncId(CategoryId);
         }
 
-    //GET api/catalog/{itemId}
-    [HttpGet]
+    //GET catalog/{itemId}
+    /*[HttpGet]
     [Route("items/{itemId}")]
     public ProduktKatalog GetItemById(string itemId)
         {
             return _service.GetItemId(itemId);
-        }
+        }*/
 
     // POST
     // POST /api/catalog/categories
@@ -59,38 +59,36 @@ public class ProduktKatalogController : ControllerBase
     public void CreateItem([FromBody] ProduktKatalog newItem)
         {
             _service.PostItem(newItem);
-        }
+        }*/
 
     // PUT
 
-    // PUT /api/catalog/categories/{categoryId}
-    [HttpPut]
-    [Route("categoreies/{categoryId}")]
-    public void UpdateCategory(string categoryId, [FromBody] ProduktKatalog updateCategory)
+    // PUT /api/catalog/categories/{CategoryId}
+    [HttpPut("category", Name = "UpdateCategory")]
+    public void UpdateCategory(string CategoryId, [FromBody] ProduktKatalog updateCategory)
         {
-            _service.PutCategory(categoryId, updateCategory);
+            _service.PutCategory(CategoryId, updateCategory);
         }
 
     // PUT /api/catalog/items/{itemId}
-    [HttpPut]
+    /*[HttpPut]
     [Route("items/{itemId}")]
     public void UpdateItem(string itemId, [FromBody] ProduktKatalog updateItem)
         {
             _service.PutItem(itemId, updateItem);
-        }
+        }*/
 
     //Delete
 
     //Delete api/catalog/categories/{categoryId}
-    [HttpDelete]
-    [Route("categories/{categoryId}")]
-    public void DeleteCategory(string categoryId)
+    [HttpDelete("category/{CategoryId}", Name = "DeleteCategory")]
+    public void DeleteCategory(string CategoryId)
         {
-            _service.DeleteCategory(categoryId);
+            _service.DeleteCategory(CategoryId);
         }
 
     //DELETE api/catelog/items/{itemId}
-    [HttpDelete]
+    /*[HttpDelete]
     [Route("items/{itemId}")]
     public void DeleteItem(string itemId)
         {

@@ -31,16 +31,17 @@ public class produktDataService
             return Collection.Find(_=> true).ToList();
         }
 
-    public ProduktKatalog GetAsyncId(string categoryId)
+    public ProduktKatalog GetAsyncId(string CategoryId)
         {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("_categoryId", categoryId);
+            var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
             return Collection.Find(filter).FirstOrDefault();
         }
-    public ProduktKatalog GetItemId(string itemId)
+
+    /*public ProduktKatalog GetItemId(string itemId)
         {
             var filter = Builders<ProduktKatalog>.Filter.Eq("_itemId", itemId);
             return Collection.Find(filter).FirstOrDefault();
-        }
+        }*/
     
     //POST metoder
     public void PostCategory(ProduktKatalog _produktKatalog)
@@ -53,16 +54,17 @@ public class produktDataService
         }*/
 
     //PUT metoder
-  /*  public void PutCategory(string categoryId, ProduktKatalog updateCategory)
+    public void PutCategory(string CategoryId, ProduktKatalog updateCategory)
         {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("_categoryId", categoryId);
+            var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
             var update = Builders<ProduktKatalog>.Update
                 .Set(c => c.CategoryCode, updateCategory.CategoryCode)
-                .Set(c => c.CategoryCode, updateCategory.CategoryName);
+                .Set(c => c.CategoryName, updateCategory.CategoryName)
+                .Set(c => c.CategoryDescription, updateCategory.CategoryDescription);
             
             Collection.UpdateOne(filter, update);
         }
-    public void PutItem(string itemId, ProduktKatalog updateItem)
+   /* public void PutItem(string itemId, ProduktKatalog updateItem)
         {
             var filter = Builders<ProduktKatalog>.Filter.Eq("_itemId", itemId);
             var update = Builders<ProduktKatalog>.Update
@@ -70,15 +72,15 @@ public class produktDataService
                 .Set(i => i.Auctiondate, updateItem.Auctiondate);
             
             Collection.UpdateOne(filter, update);
-        }
+        }*/
 
     //DELETE Metoder
-    public void DeleteCategory(string categoryId)
+    public void DeleteCategory(string CategoryId)
         {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("_category", categoryId);
+            var filter = Builders<ProduktKatalog>.Filter.Eq("Category", CategoryId);
             Collection.DeleteOne(filter);
         }
-    public void DeleteItem(string itemId)
+    /*public void DeleteItem(string itemId)
         {
             var filter = Builders<ProduktKatalog>.Filter.Eq("_itemId", itemId);
             Collection.DeleteOne(filter);
