@@ -2,11 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using ProduktKatalogService.Models;
 using ProduktDataService.DataService;
+using MongoDB.Driver;
+using MongoDB.Bson;
+using MongoDB.Driver.Core.Configuration;
 
 namespace ProduktKatalogService.Controllers;
 
 [ApiController]
-[Route("api/categories")]
+[Route("[controller]")]
 
 public class ProduktKatalogController : ControllerBase
 {
@@ -21,16 +24,14 @@ public class ProduktKatalogController : ControllerBase
     //GET
 
     //Get api/catalog/categories
-    [HttpGet]
-    [Route("categories")]
+    [HttpGet("category", Name = "GetCategories")]
     public List<ProduktKatalog> GetCategories()
         {
             return _service.GetAsync();
         }
 
     //GET api/catalog/{categoriesId}
-    [HttpGet]
-    [Route("categories/{categoryId}")]
+    [HttpGet("category/{categoryid}", Name = "GetCaregoryById")]
     public ProduktKatalog GetCategoryById(string categoryId)
         {
             return _service.GetAsyncId(categoryId);
@@ -46,15 +47,14 @@ public class ProduktKatalogController : ControllerBase
 
     // POST
     // POST /api/catalog/categories
-    [HttpPost]
-    [Route("categoreies")]
-    public void CreateCategory([FromBody] ProduktKatalog newCategory)
+    [HttpPost("category", Name = "CreateCategory")]
+    public void CreateCategory([FromBody] ProduktKatalog _produktKatalog)
         {
-            _service.PostCategory(newCategory);
+            _service.PostCategory(_produktKatalog);
         }
 
     // POST /api/catalog/items
-    [HttpPost]
+    /*[HttpPost]
     [Route("items")]
     public void CreateItem([FromBody] ProduktKatalog newItem)
         {
@@ -95,5 +95,5 @@ public class ProduktKatalogController : ControllerBase
     public void DeleteItem(string itemId)
         {
             _service.DeleteItem(itemId);
-        }
+        }*/
 }

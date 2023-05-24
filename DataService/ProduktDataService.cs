@@ -1,6 +1,6 @@
 using ProduktKatalogService;
 using Microsoft.AspNetCore.Mvc;
-using ProduktKatalogService;
+using ProduktKatalogService.Controllers;
 using ProduktKatalogService.Models;
 using System.Collections.Generic;
 using MongoDB.Driver;
@@ -17,11 +17,11 @@ public class produktDataService
     public IMongoCollection<ProduktKatalog> Collection { get; set; }
     public List<ProduktKatalog> _produktkatalog = new List<ProduktKatalog>();
 
-    public produktDataService(ILogger<produktDataService> logger, IConfiguration config)
+    public produktDataService(ILogger<produktDataService> logger)
         {
-            var client = new MongoClient("mongodb+srv://williamoelle:prodkata123@produktkatalog.lv9yufz.mongodb.net/");
-            Database = client.GetDatabase("ProduktKatalog");
-            Collection = Database.GetCollection<ProduktKatalog>("ProduktKatalog");
+            var client = new MongoClient("mongodb+srv://williamoelle:prodkatalog123@produktkatalog.lv9yufz.mongodb.net/");
+            _database = client.GetDatabase("ProduktKatalog");
+            Collection = _database.GetCollection<ProduktKatalog>("ProduktKatalogCollection");
         }
 
 
@@ -43,17 +43,17 @@ public class produktDataService
         }
     
     //POST metoder
-    public void PostCategory(ProduktKatalog newCategory)
+    public void PostCategory(ProduktKatalog _produktKatalog)
         {
-            Collection.InsertOne(newCategory);
+            Collection.InsertOne(_produktKatalog);
         }
-    public void PostItem(ProduktKatalog newItem)
+    /*public void PostItem(ProduktKatalog newItem)
         {
             Collection.InsertOne(newItem);
-        }
+        }*/
 
     //PUT metoder
-    public void PutCategory(string categoryId, ProduktKatalog updateCategory)
+  /*  public void PutCategory(string categoryId, ProduktKatalog updateCategory)
         {
             var filter = Builders<ProduktKatalog>.Filter.Eq("_categoryId", categoryId);
             var update = Builders<ProduktKatalog>.Update
@@ -82,5 +82,5 @@ public class produktDataService
         {
             var filter = Builders<ProduktKatalog>.Filter.Eq("_itemId", itemId);
             Collection.DeleteOne(filter);
-        }
+        }*/
 }
