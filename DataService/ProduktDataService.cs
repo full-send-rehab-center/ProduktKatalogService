@@ -36,22 +36,12 @@ public class produktDataService
             var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
             return Collection.Find(filter).FirstOrDefault();
         }
-
-    /*public ProduktKatalog GetItemId(string itemId)
-        {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("_itemId", itemId);
-            return Collection.Find(filter).FirstOrDefault();
-        }*/
     
     //POST metoder
     public void PostCategory(ProduktKatalog _produktKatalog)
         {
             Collection.InsertOne(_produktKatalog);
         }
-    /*public void PostItem(ProduktKatalog newItem)
-        {
-            Collection.InsertOne(newItem);
-        }*/
 
     //PUT metoder
     public void PutCategory(string CategoryId, ProduktKatalog updateCategory)
@@ -64,25 +54,11 @@ public class produktDataService
             
             Collection.UpdateOne(filter, update);
         }
-   /* public void PutItem(string itemId, ProduktKatalog updateItem)
-        {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("_itemId", itemId);
-            var update = Builders<ProduktKatalog>.Update
-                .Set(i => i.ItemDescription, updateItem.ItemDescription)
-                .Set(i => i.Auctiondate, updateItem.Auctiondate);
-            
-            Collection.UpdateOne(filter, update);
-        }*/
 
     //DELETE Metoder
     public void DeleteCategory(string CategoryId)
         {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("Category", CategoryId);
-            Collection.DeleteOne(filter);
+            var filter = Builders<ProduktKatalog>.Filter.Eq(x =>x.CategoryId, CategoryId);
+            Collection.DeleteMany(filter);
         }
-    /*public void DeleteItem(string itemId)
-        {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("_itemId", itemId);
-            Collection.DeleteOne(filter);
-        }*/
 }

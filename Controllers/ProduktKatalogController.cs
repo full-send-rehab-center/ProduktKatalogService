@@ -20,9 +20,7 @@ public class ProduktKatalogController : ControllerBase
             _service = service;
         }
 
-
     //GET
-
     //Get api/catalog/categories
     [HttpGet("category", Name = "GetCategories")]
     public List<ProduktKatalog> GetCategories()
@@ -37,14 +35,6 @@ public class ProduktKatalogController : ControllerBase
             return _service.GetAsyncId(CategoryId);
         }
 
-    //GET catalog/{itemId}
-    /*[HttpGet]
-    [Route("items/{itemId}")]
-    public ProduktKatalog GetItemById(string itemId)
-        {
-            return _service.GetItemId(itemId);
-        }*/
-
     // POST
     // POST /api/catalog/categories
     [HttpPost("category", Name = "CreateCategory")]
@@ -53,16 +43,7 @@ public class ProduktKatalogController : ControllerBase
             _service.PostCategory(_produktKatalog);
         }
 
-    // POST /api/catalog/items
-    /*[HttpPost]
-    [Route("items")]
-    public void CreateItem([FromBody] ProduktKatalog newItem)
-        {
-            _service.PostItem(newItem);
-        }*/
-
     // PUT
-
     // PUT /api/catalog/categories/{CategoryId}
     [HttpPut("category", Name = "UpdateCategory")]
     public void UpdateCategory(string CategoryId, [FromBody] ProduktKatalog updateCategory)
@@ -70,28 +51,11 @@ public class ProduktKatalogController : ControllerBase
             _service.PutCategory(CategoryId, updateCategory);
         }
 
-    // PUT /api/catalog/items/{itemId}
-    /*[HttpPut]
-    [Route("items/{itemId}")]
-    public void UpdateItem(string itemId, [FromBody] ProduktKatalog updateItem)
-        {
-            _service.PutItem(itemId, updateItem);
-        }*/
-
     //Delete
-
     //Delete api/catalog/categories/{categoryId}
     [HttpDelete("category/{CategoryId}", Name = "DeleteCategory")]
     public void DeleteCategory(string CategoryId)
         {
             _service.DeleteCategory(CategoryId);
         }
-
-    //DELETE api/catelog/items/{itemId}
-    /*[HttpDelete]
-    [Route("items/{itemId}")]
-    public void DeleteItem(string itemId)
-        {
-            _service.DeleteItem(itemId);
-        }*/
 }
