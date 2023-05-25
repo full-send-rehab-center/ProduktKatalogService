@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DMw+F979w7zwRc0nE6JPpV/63Ybfa2RQior8lzvPwg3BlWT74g4ECt6TLvTJuAH6DQXgpVXX/vYNBTh5spyg9g==",
+  "dgSpecHash": "CPYRrn1z0KWliTJW9h5MbFoymLrHYbGfVbURx+reHyOe6sg2wdbilrJPSd2QCMLf2y11P9trdk8j0NajlvvsMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj",
+  "projectFilePath": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zulud\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\zulud\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

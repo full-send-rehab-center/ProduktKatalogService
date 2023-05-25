@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj": {}
+    "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj": {
+    "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj",
+        "projectUniqueName": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj",
         "projectName": "ProduktKatalogService",
-        "projectPath": "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj",
-        "packagesPath": "C:\\Users\\zulud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\obj\\",
+        "projectPath": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\ProduktKatalogService.csproj",
+        "packagesPath": "C:\\Users\\oelle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\oelle\\Desktop\\ProduktKatalogService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zulud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\oelle\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -84,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
