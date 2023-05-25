@@ -19,7 +19,7 @@ public class produktDataService
 
     public produktDataService(ILogger<produktDataService> logger)
         {
-            var client = new MongoClient("mongodb+srv://williamoelle:prodkatalog123@produktkatalog.lv9yufz.mongodb.net/");
+            var client = new MongoClient("mongodb://localhost:27018");
             _database = client.GetDatabase("ProduktKatalog");
             Collection = _database.GetCollection<ProduktKatalog>("ProduktKatalogCollection");
         }

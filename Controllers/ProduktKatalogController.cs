@@ -9,14 +9,16 @@ using MongoDB.Driver.Core.Configuration;
 namespace ProduktKatalogService.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 
 public class ProduktKatalogController : ControllerBase
 {
     private produktDataService _service;
+    private readonly ILogger<ProduktKatalogController> _logger;
     
-    public ProduktKatalogController(produktDataService service)
+    public ProduktKatalogController(produktDataService service, ILogger<ProduktKatalogController> logger)
         {
+            _logger = logger;
             _service = service;
         }
 
@@ -40,6 +42,7 @@ public class ProduktKatalogController : ControllerBase
     [HttpPost("category", Name = "CreateCategory")]
     public void CreateCategory([FromBody] ProduktKatalog _produktKatalog)
         {
+            _logger.LogInformation($"CreateCategory called with values: {_produktKatalog.CategoryName}");
             _service.PostCategory(_produktKatalog);
         }
 
