@@ -34,6 +34,7 @@ public class ProduktKatalogController : ControllerBase
     [HttpGet("category/{CategoryId}", Name = "GetCaregoryById")]
     public ProduktKatalog GetCategoryById(string CategoryId)
         {
+             _logger.LogInformation($"GetProduct by ID called with id {CategoryId}");
             return _service.GetAsyncId(CategoryId);
         }
 
