@@ -23,7 +23,7 @@ jobs:
     - name: Build the Docker Image
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
-      run: docker build . --file ProduktKatalogService/Dockerfile --tag ${DOCKER_USER}/produktservice:latest
+      run: docker build . --file ./Dockerfile --tag ${DOCKER_USER}/produktservice:latest
       
     - name: Push image to Docker Hub
       env: 
