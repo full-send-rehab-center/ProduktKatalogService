@@ -13,7 +13,6 @@ public class produktDataService
 {
     private readonly ILogger<produktDataService> _logger;
     public IMongoCollection<ProduktKatalog> Collection { get; set; }
-
     private readonly string _connectionString;
     private readonly string _databaseName;
     private readonly string _collectionName;
