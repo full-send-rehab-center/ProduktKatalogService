@@ -17,48 +17,59 @@ public class produktDataService
     public IMongoCollection<ProduktKatalog> Collection { get; set; }
     public List<ProduktKatalog> _produktkatalog = new List<ProduktKatalog>();
 
-    public produktDataService(ILogger<produktDataService> logger)
-        {
-            var client = new MongoClient("mongodb://localhost:27018");
-            _database = client.GetDatabase("ProduktKatalog");
-            Collection = _database.GetCollection<ProduktKatalog>("ProduktKatalogCollection");
-        }
+    private readonly string _connectionString;
+    private readonly string _databaseName;
+    private readonly string _collectionName;
+    private IConfiguration _config;
+
+    public produktDataService(ILogger<produktDataService> logger, IConfiguration config)
+    {
+        _config = config;
+
+        _collectionName = config["CollectionName"];
+        _connectionString = config["ConnectionString"];
+        _databaseName = config["DatabaseName"];
+
+        var client = new MongoClient(_connectionString);
+        _database = client.GetDatabase(_databaseName);
+        Collection = _database.GetCollection<ProduktKatalog>(_collectionName);
+    }
 
 
     //GET metoder
     public List<ProduktKatalog> GetAsync()
-        {
-            return Collection.Find(_=> true).ToList();
-        }
+    {
+        return Collection.Find(_ => true).ToList();
+    }
 
     public ProduktKatalog GetAsyncId(string CategoryId)
-        {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
-            return Collection.Find(filter).FirstOrDefault();
-        }
-    
+    {
+        var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
+        return Collection.Find(filter).FirstOrDefault();
+    }
+
     //POST metoder
     public void PostCategory(ProduktKatalog _produktKatalog)
-        {
-            Collection.InsertOne(_produktKatalog);
-        }
+    {
+        Collection.InsertOne(_produktKatalog);
+    }
 
     //PUT metoder
     public void PutCategory(string CategoryId, ProduktKatalog updateCategory)
-        {
-            var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
-            var update = Builders<ProduktKatalog>.Update
-                .Set(c => c.CategoryCode, updateCategory.CategoryCode)
-                .Set(c => c.CategoryName, updateCategory.CategoryName)
-                .Set(c => c.CategoryDescription, updateCategory.CategoryDescription);
-            
-            Collection.UpdateOne(filter, update);
-        }
+    {
+        var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
+        var update = Builders<ProduktKatalog>.Update
+            .Set(c => c.CategoryCode, updateCategory.CategoryCode)
+            .Set(c => c.CategoryName, updateCategory.CategoryName)
+            .Set(c => c.CategoryDescription, updateCategory.CategoryDescription);
+
+        Collection.UpdateOne(filter, update);
+    }
 
     //DELETE Metoder
     public void DeleteCategory(string CategoryId)
-        {
-            var filter = Builders<ProduktKatalog>.Filter.Eq(x =>x.CategoryId, CategoryId);
-            Collection.DeleteMany(filter);
-        }
+    {
+        var filter = Builders<ProduktKatalog>.Filter.Eq(x => x.CategoryId, CategoryId);
+        Collection.DeleteMany(filter);
+    }
 }

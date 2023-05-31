@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj": {}
+    "C:\\Users\\sohja\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj": {
+    "C:\\Users\\sohja\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj",
+        "projectUniqueName": "C:\\Users\\sohja\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj",
         "projectName": "ProduktKatalogService",
-        "projectPath": "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj",
-        "packagesPath": "C:\\Users\\zulud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zulud\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\obj\\",
+        "projectPath": "C:\\Users\\sohja\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\ProduktKatalogService.csproj",
+        "packagesPath": "C:\\Users\\sohja\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sohja\\OneDrive\\Dokumenter\\Skole\\Fag\\4. semester\\Projekt\\ProduktKatalogService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zulud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sohja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
