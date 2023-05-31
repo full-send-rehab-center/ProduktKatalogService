@@ -12,10 +12,7 @@ namespace ProduktDataService.DataService;
 public class produktDataService
 {
     private readonly ILogger<produktDataService> _logger;
-    private readonly IMongoDatabase _database;
-    public IMongoDatabase Database { get; set; }
     public IMongoCollection<ProduktKatalog> Collection { get; set; }
-    public List<ProduktKatalog> _produktkatalog = new List<ProduktKatalog>();
 
     private readonly string _connectionString;
     private readonly string _databaseName;
@@ -31,7 +28,7 @@ public class produktDataService
         _databaseName = config["DatabaseName"];
 
         var client = new MongoClient(_connectionString);
-        _database = client.GetDatabase(_databaseName);
+        var _database = client.GetDatabase(_databaseName);
         Collection = _database.GetCollection<ProduktKatalog>(_collectionName);
     }
 
