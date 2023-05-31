@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Driver.Core.Configuration;
+using System;
+using System.Text;
 
 namespace ProduktDataService.DataService;
 
