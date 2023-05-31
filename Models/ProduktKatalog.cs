@@ -1,10 +1,14 @@
-namespace ProduktKatalogService;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace ProduktKatalogService.Models;
 
 public class ProduktKatalog
 {
-public string CategoryCode{get; set;}
-public string CategoryName{get; set;}
-public string ItemDescription{get; set;}
-public DateTime Auctiondate{get;set;}
-
+[BsonId]
+[BsonRepresentation(BsonType.ObjectId)]
+public string? CategoryId {get; set;}
+public string? CategoryCode {get; set;}
+public string? CategoryName {get; set;}
+public string? CategoryDescription {get; set;}
 }
