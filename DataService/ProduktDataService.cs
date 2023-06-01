@@ -40,34 +40,36 @@ public class produktDataService
         return Collection.Find(_ => true).ToList();
     }
 
-    public ProduktKatalog GetAsyncId(string CategoryId)
+    public ProduktKatalog GetAsyncId(string productId)
     {
-        var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
+        var filter = Builders<ProduktKatalog>.Filter.Eq("ProductId", productId);
         return Collection.Find(filter).FirstOrDefault();
     }
 
     //POST metoder
-    public void PostCategory(ProduktKatalog _produktKatalog)
+    public async Task<ProduktKatalog?> PostProduct(ProduktKatalog newProduct)
     {
-        Collection.InsertOne(_produktKatalog);
+        await Collection.InsertOneAsync(newProduct);
+        return newProduct;
     }
 
     //PUT metoder
-    public void PutCategory(string CategoryId, ProduktKatalog updateCategory)
+    public void PutProduct(string productId, ProduktKatalog updatedProduct)
     {
-        var filter = Builders<ProduktKatalog>.Filter.Eq("CategoryId", CategoryId);
+        var filter = Builders<ProduktKatalog>.Filter.Eq("ProductId", productId);
         var update = Builders<ProduktKatalog>.Update
-            .Set(c => c.CategoryCode, updateCategory.CategoryCode)
-            .Set(c => c.CategoryName, updateCategory.CategoryName)
-            .Set(c => c.CategoryDescription, updateCategory.CategoryDescription);
+            .Set(c => c.CategoryCode, updatedProduct.CategoryCode)
+            .Set(c => c.ProductName, updatedProduct.ProductName)
+            .Set(c => c.ProductDescription, updatedProduct.ProductDescription)
+            .Set(c => c.itemCondition, updatedProduct.itemCondition);
 
         Collection.UpdateOne(filter, update);
     }
 
     //DELETE Metoder
-    public void DeleteCategory(string CategoryId)
+    public void DeleteProduct(string productId)
     {
-        var filter = Builders<ProduktKatalog>.Filter.Eq(x => x.CategoryId, CategoryId);
+        var filter = Builders<ProduktKatalog>.Filter.Eq(x => x.ProductId, productId);
         Collection.DeleteMany(filter);
     }
 }

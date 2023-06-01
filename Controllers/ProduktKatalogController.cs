@@ -22,44 +22,44 @@ public class ProduktKatalogController : ControllerBase
             _service = service;
         }
 
-    //GET
-    //Get api/catalog/categories
-    [HttpGet("category", Name = "GetCategories")]
-    public List<ProduktKatalog> GetCategories()
+    // GET
+    // Get api/productkatalog/products
+    [HttpGet("Products", Name = "GetProducts")]
+    public List<ProduktKatalog> GetProducts()
         {
             return _service.GetAsync();
         }
 
-    //GET catalog/{categoriesId}
-    [HttpGet("category/{CategoryId}", Name = "GetCaregoryById")]
-    public ProduktKatalog GetCategoryById(string CategoryId)
+    // GET /api/productkatalog/products/{productId}
+    [HttpGet("products/{productId}", Name = "GetProductById")]
+    public ProduktKatalog GetProductById(string productId)
         {
-            _logger.LogInformation($"GetProduct by ID called with id {CategoryId}");
-            return _service.GetAsyncId(CategoryId);
+            _logger.LogInformation($"GetProduct by ID called with id {productId}");
+            return _service.GetAsyncId(productId);
         }
 
     // POST
-    // POST /api/catalog/categories
-    [HttpPost("category", Name = "CreateCategory")]
-    public void CreateCategory([FromBody] ProduktKatalog _produktKatalog)
+    // POST /api/productkatalog/products/createproduct
+    [HttpPost("products/createproduct", Name = "CreateProduct")]
+    public void CreateProduct([FromBody] ProduktKatalog newProduct)
         {
-            _logger.LogInformation($"CreateCategory called with values: {_produktKatalog.CategoryName}");
-            _service.PostCategory(_produktKatalog);
+            _logger.LogInformation($"CreateProduct called with values: {newProduct.ProductName}");
+            _service.PostProduct(newProduct);
         }
 
     // PUT
-    // PUT /api/catalog/categories/{CategoryId}
-    [HttpPut("category", Name = "UpdateCategory")]
-    public void UpdateCategory(string CategoryId, [FromBody] ProduktKatalog updateCategory)
+    // PUT /api/productkatalog/products/{productId}
+    [HttpPut("products/{productId}", Name = "UpdateProduct")]
+    public void UpdateProduct(string productId, [FromBody] ProduktKatalog updatedProduct)
         {
-            _service.PutCategory(CategoryId, updateCategory);
+            _service.PutProduct(productId, updatedProduct);
         }
 
-    //Delete
-    //Delete api/catalog/categories/{categoryId}
-    [HttpDelete("category/{CategoryId}", Name = "DeleteCategory")]
-    public void DeleteCategory(string CategoryId)
+    // Delete
+    // Delete /api/productkatalog/products/{productId}
+    [HttpDelete("products/{productId}", Name = "DeleteProduct")]
+    public void RemoveProduct(string productId)
         {
-            _service.DeleteCategory(CategoryId);
+            _service.DeleteProduct(productId);
         }
 }
